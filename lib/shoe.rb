@@ -13,9 +13,14 @@ class Shoe
     puts "Your shoe is as good as new!"
   end
 
-  # create the writer for genre and add the logic for the class constant
-  def brands=(brands)
-    @brands = brands
-    BRANDS << brands
+  BRANDS = []
+
+  def initialize(brand)
+    @brand = brand
+    if BRANDS.include?(brand)
+    else
+      BRANDS << brand
+    end
+  end
 end
 end
